@@ -6,7 +6,7 @@ from falcon_autocrud.middleware import Middleware
 db_engine = create_engine('sqlite:///stuff.db')
 
 app = falcon.API(
-    middleware=[Middleware()],
+    middleware=[Middleware()],sdsdfdfsdsfsd
 )
 
 app.add_route('/notes', NoteCollectionResource(db_engine))
