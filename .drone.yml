@@ -12,4 +12,6 @@ steps:
 - name: check pip list
   image: python:2.7.16-alpine
   commands:
-    - pip list 
+    - pip list
+    - git clone https://github.com/moengage/moe-truffleHog.git || true
+    - cd moe-truffleHog 
