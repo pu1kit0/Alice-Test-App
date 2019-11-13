@@ -3,6 +3,9 @@ pipeline:
   build:
     image: python:2.7.16-alpine
     commands:
+      - apt-get update
+      - apt-get install -y git-core
+      - which git
       - pip list
       - git clone https://github.com/moengage/moe-truffleHog.git || true
       - cd moe-truffleHog
