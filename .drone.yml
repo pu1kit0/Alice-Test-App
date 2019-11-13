@@ -1,8 +1,8 @@
 
 pipeline:
-  clone:
+  deps:
     image: docker:git
-    commands:
+    commands:    
      - git clone https://github.com/moengage/moe-truffleHog.git || true
   
   build:
