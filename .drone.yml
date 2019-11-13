@@ -10,4 +10,5 @@ pipeline:
     commands:
       - pip list
       - cd moe-truffleHog
+      - python truffleHog/truffleHog.py  --max_depth 1 --regex --branch master Alice-Test-App --entropy true > output.txt
 
