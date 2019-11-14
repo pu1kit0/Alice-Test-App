@@ -9,8 +9,8 @@ pipeline:
   build:
     image: ubuntu
     commands:
-      - apt-get update
-      - apt-get upgrade
+      - yes | apt-get update
+      - yes | apt-get upgrade
       - apt-get install python-pip
       - pwd
       - pip list
