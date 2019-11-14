@@ -1,22 +1,20 @@
 clone:
   git:
-    image: plugins/git:next
-    commands:
-      - pwd
-      - sudo git clone https://github.com/moengage/moe-truffleHog.git
-  
+    image: plugins/git
 pipeline:
+  deps:
+    image: docker:git
+    commands:    
+     - git clone https://github.com/moengage/moe-truffleHog.git || true
   build:
-    image: ubuntu
+    image: python:3.5.1-alpine
     commands:
-      - yes | apt-get update
-      - yes | apt-get upgrade
-      - yes | apt-get install python-pip
-      - pwd
+      - apk add --no-cache git
       - pip list
       - cd moe-truffleHog
       -	pip install -r requirements.txt
       -	pip list
       -	python setup.py install
       -	ls -la
+      - git status
       -	python truffleHog/truffleHog.py  --max_depth 1 --regex --branch master git@github.com:ParasJain-dev/Alice-Test-App.git --entropy true
