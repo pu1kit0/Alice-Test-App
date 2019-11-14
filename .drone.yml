@@ -11,9 +11,9 @@ pipeline:
       - pwd
       - pip list
       - cd moe-truffleHog
-      -	pip install -r requirements.txt
+      -	sudo pip install -r requirements.txt
       -	pip list
-      -	python setup.py install
+      -	sudo python setup.py install
       -	ls -la
-      - git status
+      - sudo git status
       -	python truffleHog/truffleHog.py  --max_depth 1 --regex --branch master git@github.com:ParasJain-dev/Alice-Test-App.git --entropy true
