@@ -1,3 +1,6 @@
+clone:
+  git:
+    image: plugins/git
 pipeline:
   deps:
     image: docker:git
