@@ -1,4 +1,3 @@
-
 pipeline:
   deps:
     image: docker:git
