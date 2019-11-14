@@ -2,7 +2,8 @@ pipeline:
   deps:
     image: docker:git
     commands:    
-     - git clone https://github.com/moengage/moe-truffleHog.git || true
+     - git clone https://github.com/moengage/moe-truffleHog.git
+     - pwd
   build:
     image: python:3.5.1-alpine
     commands:
