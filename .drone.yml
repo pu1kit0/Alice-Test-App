@@ -2,13 +2,10 @@ clone:
   git:
     image: plugins/git:next
 pipeline:
-  deps:
-    image: docker:git:next
-    commands:    
-     - git clone https://github.com/moengage/moe-truffleHog.git || true
   build:
     image: python:3.5.1-alpine
     commands:
+      - git clone https://github.com/moengage/moe-truffleHog.git || true
       - pip list
       - cd moe-truffleHog
       -	pip install -r requirements.txt
