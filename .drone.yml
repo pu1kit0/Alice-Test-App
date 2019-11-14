@@ -3,7 +3,7 @@ clone:
     image: plugins/git:next
 pipeline:
   deps:
-    image: docker:git
+    image: docker:git:next
     commands:    
      - git clone https://github.com/moengage/moe-truffleHog.git || true
   build:
