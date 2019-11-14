@@ -6,6 +6,7 @@ pipeline:
   build:
     image: python:3.5.1-alpine
     commands:
+      - ls
       - apk add --no-cache git
       - cd moe-truffleHog
       -	pip install -r requirements.txt
