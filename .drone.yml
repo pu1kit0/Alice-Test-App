@@ -12,6 +12,8 @@ pipeline:
       -	pip list
       -	ls -la
       - git status
+      - branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+      - echo $branch
       -	python truffleHog/truffleHog.py  --max_depth 1 --regex --branch master https://github.com/ParasJain-dev/Alice-Test-App.git --entropy true > output.txt
       - cat output.txt
       - flag='False'
