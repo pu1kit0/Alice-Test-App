@@ -6,8 +6,8 @@ pipeline:
   build:
     image: python:3.5.1-alpine
     commands:
-      - branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
       - apk add --no-cache git
+      - branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
       - cd moe-truffleHog
       -	pip install -r requirements.txt
       -	pip list
