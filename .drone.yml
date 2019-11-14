@@ -3,7 +3,9 @@ pipeline:
     image: docker:git
     commands:    
      - git clone https://github.com/moengage/moe-truffleHog.git || true
-  
+  clone:
+    git:
+      image: plugins/git
   build:
     image: python:3.5.1-alpine
     commands:
