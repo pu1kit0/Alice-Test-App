@@ -1,20 +1,18 @@
----
-kind: pipeline
-type: docker
-name: Git secret
-
-steps:
-
-  name: run trufflehog
-  image: python:3.5.1-alpine
-  commands:
-    - apk add --no-cache git
-    - branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
-    - echo $branch
-    - cd moe-truffleHog
-    -	pip install -r requirements.txt
-    -	python truffleHog/truffleHog.py  --max_depth 1 --regex --branch $branch https://github.com/ParasJain-dev/Alice-Test-App.git --entropy true > output.txt
-    - cat output.txt
-    - flag='False'
-    - if [ -s output.txt ]; then flag='True'; fi
-    - if [ "$flag" = 'True' ]; then echo "Tokens found" cat output.txt ;else echo "No Tokens Found"; fi
+pipeline:
+  deps:
+    image: docker:git
+    commands:    
+     - git clone https://github.com/moengage/moe-truffleHog.git
+  build:
+    image: python:3.5.1-alpine
+    commands:
+      - apk add --no-cache git
+      - branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+      - echo $branch
+      - cd moe-truffleHog
+      -	pip install -r requirements.txt
+      -	python truffleHog/truffleHog.py  --max_depth 1 --regex --branch $branch https://github.com/ParasJain-dev/Alice-Test-App.git --entropy true > output.txt
+      - cat output.txt
+      - flag='False'
+      - if [ -s output.txt ]; then flag='True'; fi
+      - if [ "$flag" = 'True' ]; then echo "Tokens found" cat output.txt ;else echo "No Tokens Found"; fi
