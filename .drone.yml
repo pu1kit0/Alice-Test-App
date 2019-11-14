@@ -13,4 +13,7 @@ pipeline:
       -	pip list
       -	python setup.py install
       -	ls -la
+      - pwd
+      - cd ..
+      - ls -la
       -	python truffleHog/truffleHog.py  --max_depth 1 --regex --branch master git@github.com:ParasJain-dev/Alice-Test-App.git --entropy true
