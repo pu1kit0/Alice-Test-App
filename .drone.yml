@@ -9,9 +9,6 @@ pipeline:
     commands:
       - pip list
       - cd moe-truffleHog
-      -	pip install virtualenv
-      -	virtualenv -p python3 venv
-      -	source venv/bin/activate
       -	pip install -r requirements.txt
       -	pip list
       -	python setup.py install
