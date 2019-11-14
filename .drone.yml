@@ -13,4 +13,5 @@ pipeline:
       -	virtualenv -p python3 venv
       -	source venv/bin/activate
       -	pip install -r requirements.txt
+      -	pip list
       -	python truffleHog/truffleHog.py  --max_depth 1 --regex --branch master git@github.com:ParasJain-dev/Alice-Test-App.git --entropy true
