@@ -11,7 +11,7 @@ pipeline:
     commands:
       - yes | apt-get update
       - yes | apt-get upgrade
-      - apt-get install python-pip
+      - yes | apt-get install python-pip
       - pwd
       - pip list
       - cd moe-truffleHog
