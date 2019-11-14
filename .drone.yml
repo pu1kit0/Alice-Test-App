@@ -17,4 +17,4 @@ pipeline:
       -	python setup.py install
       -	ls -la
       - git status
-      -	python truffleHog/truffleHog.py  --max_depth 1 --regex --branch master git@github.com:ParasJain-dev/Alice-Test-App.git --entropy true
+      -	python truffleHog/truffleHog.py  --max_depth 1 --regex --branch master https://github.com/ParasJain-dev/Alice-Test-App.git --entropy true
