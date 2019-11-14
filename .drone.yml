@@ -1,7 +1,8 @@
+trigger :
+  event:
+    - pull_request
+
 pipeline:
-  trigger :
-    event:
-      - pull_request
   deps:
     image: docker:git
     commands:    
