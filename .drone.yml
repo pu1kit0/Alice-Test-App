@@ -3,13 +3,12 @@ clone:
     image: plugins/git:next
     commands:
       - pwd
+      - git clone https://github.com/moengage/moe-truffleHog.git || true
 pipeline:
   build:
     image: python:3.5.1-alpine
     commands:
       - pwd
-      - cd /drone/src
-      - git clone https://github.com/moengage/moe-truffleHog.git || true
       - pip list
       - cd moe-truffleHog
       -	pip install -r requirements.txt
