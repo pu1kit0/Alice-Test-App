@@ -4,6 +4,11 @@ type: docker
 name: Git secret
 
 steps:
+- name: clone trufflehog
+  image: docker:git
+  commands:
+    - git clone https://github.com/moengage/moe-truffleHog.git
+
 - name: run trufflehog
   image: python:3.5.1-alpine
   commands:
