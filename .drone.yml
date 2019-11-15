@@ -10,7 +10,7 @@ steps:
     - git clone https://github.com/moengage/moe-truffleHog.git
   when:
     event:
-     - push
+    - push
 
 - name: run trufflehog
   image: python:3.5.1-alpine
@@ -27,5 +27,5 @@ steps:
     - if [ "$flag" = 'True' ]; then echo "Tokens found" cat output.txt ;else echo "No Tokens Found"; fi
   when:
     event:
-     - push
+    - push
 
