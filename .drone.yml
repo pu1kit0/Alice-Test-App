@@ -19,4 +19,6 @@ steps:
     - if [ -s output.txt ]; then flag='True'; fi
     - if [ "$flag" = 'True' ]; then echo "Tokens found" cat output.txt ;else echo "No Tokens Found"; fi
   when:
-    event: push
+    event:
+      - push
+      - pull_request
