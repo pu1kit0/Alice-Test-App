@@ -3,11 +3,6 @@ kind: pipeline
 type: docker
 name: Git secret
 
-trigger:
-  event:
-    - pull_request
-    - push
-
 steps:
   name: run trufflehog
   image: python:3.5.1-alpine
