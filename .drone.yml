@@ -3,8 +3,12 @@ kind: pipeline
 type: docker
 name: Git secret
 
-steps:
+trigger:
+  event:
+    - pull_request
+    - push
 
+steps:
   name: run trufflehog
   image: python:3.5.1-alpine
   commands:
@@ -18,7 +22,3 @@ steps:
     - flag='False'
     - if [ -s output.txt ]; then flag='True'; fi
     - if [ "$flag" = 'True' ]; then echo "Tokens found" cat output.txt ;else echo "No Tokens Found"; fi
-  when:
-    event:
-      - push
-      - pull_request
