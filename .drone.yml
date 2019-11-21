@@ -11,7 +11,7 @@ steps:
 - name : Truffle-hog clone  
   image: docker:git
   commands:    
-     - git clone https://github.com/moengage/moe-truffleHog.git
+     - git clone https://github.com/moengage/moe-truffleHog.git --branch master
 - name: Run truffle-hog
   image: python:3.5.1-alpine
   commands:
