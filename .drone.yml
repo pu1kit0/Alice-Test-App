@@ -17,6 +17,7 @@ steps:
   image: python:3.5.1-alpine
   commands:
     - apk add --no-cache git
+    - git branch
     - branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
     - pwd
     - echo $branch
