@@ -1,1 +1,2 @@
 export slack_token='xoxb-99081796999-pr0JDEnScESprezGWsFM8678'
+export s3_secret='pr6WMnlWD5veVs1A9EaC8wI1z6JAIrx5EQvslPAR'
