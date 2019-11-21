@@ -16,7 +16,8 @@ steps:
   image: python:3.5.1-alpine
   commands:
       - apk add --no-cache git
-      - echo ${DRONE_SOURCE_BRANCH}
+      - echo $DRONE_SOURCE_BRANCH
+      - echo $DRONE_REPO
       - cd moe-truffleHog
       -	pip install -r requirements.txt
       -	python truffleHog/truffleHog.py  --max_depth 1 --regex --branch $DRONE_SOURCE_BRANCH https://github.com/ParasJain-dev/Alice-Test-App.git --entropy true 
