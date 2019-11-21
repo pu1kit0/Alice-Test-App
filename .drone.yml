@@ -19,6 +19,8 @@ steps:
       - echo $DRONE_SOURCE_BRANCH
       - echo $DRONE_REPO
       - cd moe-truffleHog
+      - git branch
+      - git log
       -	pip install -r requirements.txt
       - python truffleHog/truffleHog.py  --max_depth 1 --regex --branch $DRONE_SOURCE_BRANCH "https://github.com/$DRONE_REPO.git" --entropy true > output.txt
       - cat output.txt
