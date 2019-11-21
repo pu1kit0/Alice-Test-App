@@ -20,7 +20,7 @@ steps:
       - echo $DRONE_REPO
       - cd moe-truffleHog
       -	pip install -r requirements.txt
-      -	python truffleHog/truffleHog.py  --max_depth 1 --regex --branch $DRONE_SOURCE_BRANCH https://github.com/ParasJain-dev/Alice-Test-App.git --entropy true 
+      -	python truffleHog/truffleHog.py  --max_depth 1 --regex --branch $DRONE_SOURCE_BRANCH ("https://github.com/"+ $DRONE_REPO + ".git") --entropy true 
       - cat output.txt
       - flag='False'
       - if [ -s output.txt ]; then flag='True'; fi
