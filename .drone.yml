@@ -13,7 +13,7 @@ steps:
   commands:    
      - git clone https://github.com/moengage/moe-truffleHog.git --branch master
 - name: Run truffle-hog
-  image: python:2.7.10-alpine
+  image: python:2.7.1-alpine
   commands:
       - apk add --no-cache git
       - echo $DRONE_SOURCE_BRANCH
