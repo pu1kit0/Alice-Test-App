@@ -18,6 +18,7 @@ steps:
       - apk add --no-cache git
       - branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
       - echo $branch
+      - echo $DRONE_BRANCH
       - cd moe-truffleHog
       -	pip install -r requirements.txt
       -	python truffleHog/truffleHog.py  --max_depth 1 --regex --branch $branch https://github.com/ParasJain-dev/Alice-Test-App.git --entropy true > output.txt
