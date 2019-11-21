@@ -18,6 +18,7 @@ steps:
   commands:
     - apk add --no-cache git
     - branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+    - pwd
     - echo $branch
     - cd moe-truffleHog
     -	pip install -r requirements.txt
