@@ -11,7 +11,7 @@ steps:
     - git clone https://github.com/moengage/moe-truffleHog.git
   when:
     event:
-    - pull_request
+    - push
 
 - name: run trufflehog
   image: python:3.5.1-alpine
