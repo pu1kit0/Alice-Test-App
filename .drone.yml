@@ -17,11 +17,8 @@ steps:
   image: python:3.5.1-alpine
   commands:
     - apk add --no-cache git
-    - git branch
     - branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
-    - pwd
     - echo $branch
-    - ls
     - cd moe-truffleHog
     -	pip install -r requirements.txt
     -	python truffleHog/truffleHog.py  --max_depth 1 --regex --branch $branch https://github.com/ParasJain-dev/Alice-Test-App.git --entropy true > output.txt
